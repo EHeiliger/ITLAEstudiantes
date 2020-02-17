@@ -1,0 +1,61 @@
+﻿
+@model List<EstudiantesItla.Models.ListaModeloTabla>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Estudiantes</title>
+    <style>
+        .Nuevo {
+           width: 100px;
+           height: 60px; 
+           background-color: cornflowerblue; 
+           border-radius: 10px;
+           margin-left: 800px;
+        }
+        tr>th {
+            width: 150px;
+            text-align: justify;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <form>
+                <button class="Nuevo" formaction="Home/AddNuevo" type="submit"><strong>Nuevo</strong> </button>
+            </form>
+        </div>
+        <table >
+            <tr>
+                <th >Nombre</th>
+                <th >Apellido</th>
+                <th>Carrera</th>
+                <th>Matricula</th>
+                <th>Status</th>
+            </tr>
+            @foreach (var Estudiante in Model)
+            {
+        <tr>
+            <td>@Estudiante.Nombre</td>
+            <td>@Estudiante.Apellido</td>
+            <td>@Estudiante.Carrera</td>
+            <td>@Estudiante.Matricula</td>
+            <td>@Estudiante.Status</td>
+            <td>
+                <form>
+                    <button type="submit" formaction="/home/editar/@Estudiante.Matricula" formmethod="post">Editar</button>
+                    <button type="submit" formaction="/home/eliminar/@Estudiante.Matricula" formmethod="post" >Eliminar</button>
+                </form>
+            </td>
+        </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNuevo</title>
+    <style>
+        .campo {
+            margin-top: 20px;
+            }
+    </style>
+</head>
+<body>
+<div>
+    <form action="/home/GuardarNuevo" method="post">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="Nombre"/> <br />
+        
+        <label for="Apellido">Apellido</label>
+        <input type="text" id="Apellido" class="campo" name="Apellido" /> <br/>
+        
+        <label for="Carrera">Carrera</label>
+        <input type="text" id="Carrera" class="campo" name="Carrera"/> <br/>
+        <button>Agregar</button>
+    </form>
+</div>
+</body>
+</html>
